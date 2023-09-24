@@ -1,9 +1,7 @@
 # Grand Theft Auto San Andreas Trainer
 For Version 1.0 HOODLUM
 
-<video width="960" height="540" controls>
-  <source src="demo.webm" type="video/mp4">
-</video>
+[Demo Video](https://github.com/BieHDC/go-gtasa-trainer/blob/8b010e0d90c9df9ccab517fa1464010db58407cf/demo.webm)
 
 ---
 ## What is going on?
