@@ -1,0 +1,8 @@
+Website = "https://github.com/BieHDC"
+
+[Details]
+  Icon = "Icon.png"
+  Name = "GTA SA Trainer"
+  ID = "biehdc.trainer.gtasa"
+  Version = "0.4.20"
+  Build = 10

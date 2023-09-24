@@ -1,0 +1,78 @@
+<html>
+<style>
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th, td {
+    text-align: center;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+</style>
+<body>
+<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
+<h2>Weapons</h2>
+<form action="/weapon" method="GET" target="dummyframe">
+    <table>
+        <tr>
+            <th>Weapon</th>
+            <th>Ammo</th>
+            <th>Click to Get</th>
+        </tr>
+            <tr>
+                <td>
+                <select name="weaponid">
+                {{ range .Weapons }}
+                    <option value="{{ .AsInt }}">{{ .String }}</option>
+                {{ end }}
+                </select>
+                </td>
+                <td><input type="number" name="ammo" min="1" max="9999" value="1000"/></td>
+                <td><input type="submit" value="Get"/></td>
+            </tr>
+    </table>
+</form>
+<h2>Vehicle Spawner</h2>
+<form action="/spawn" method="GET" target="dummyframe">
+    <table>
+        <tr>
+            <th>Vehicle ID</th>
+            <th>Vehicle Name</th>
+            <th>Click to Spawn</th>
+        </tr>
+            <tr>
+                <td>
+                <select id="veh1" onchange="veh2.value=this.value;" name="vehicleid">
+                {{ range .Vehicles }}
+                    <option value="{{ .AsInt }}">{{ .AsInt }}</option>
+                {{ end }}
+                </select>
+                </td>
+                <td>
+                <select id="veh2" onchange="veh1.value=this.value;">
+                {{ range .Vehicles }}
+                    <option value="{{ .AsInt }}">{{ .String }}</option>
+                {{ end }}
+                </select>
+                </td>
+                <td><input type="submit" value="Spawn"/></td>
+            </tr>
+    </table>
+</form>
+</body>
+</html>
